@@ -1,7 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/mnlprz/calendar-app/task"
+)
 
 func main() {
-	fmt.Println("Hello world!")
+
+	var t task.Task
+	t, err := t.Add("test")
+	if err != nil {
+		log.Fatal(err)
+	}
+	err = t.Store()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
